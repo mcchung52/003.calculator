@@ -1,0 +1,52 @@
+body {
+	font-family: arial;
+	text-align: center;
+}
+.container {
+	text-align: center;
+}
+#equals {
+	max-width: 110px;
+	min-width: 110px;
+	max-height: 50px;
+	min-height: 50px;
+}
+.but {
+	border: 1px solid #666;
+  border-radius: 3px;
+  background-color: gray;
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  min-height: 50px;
+  /* height:6vw;
+  width:24%; */
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  margin: 2px;
+  padding: 0px;
+}
+#numpad {
+	max-width: 250px;
+	min-width: 250px;
+	margin:0px;
+	padding:0px;
+
+}
+#display {
+	max-width: 225px;
+	min-width: 225px;
+	max-height: 50px;
+	min-height: 50px;
+	margin-left: 12px;
+	border: 1px solid #666;
+	border-radius: 3px;
+	margin-bottom: 8px;
+/*	padding-top: 0px;
+	vertical-align: center;*/
+	text-align: right;
+	font-size: 40px;
+}
