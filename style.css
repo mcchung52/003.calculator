@@ -4,56 +4,31 @@
 	font-family: arial;
 }
 #equal {
-/* 	max-width: 110px;
-min-width: 110px;
-max-height: 50px;
-min-height: 50px; */
-	width: 110px;
+	width: 108px;
 	height: 50px;
 }
 .but {
 	border: 1px solid #666;
   border-radius: 3px;
   background-color: gray;
-  /*min-width: 50px;
-  min-height: 50px;
-  max-width: 50px;
-  min-height: 50px;*/
   width: 50px;
   height: 50px;
-  /* height:6vw;
-  width:24%; */
   display: inline-block;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  /* cursor: pointer; */
+  cursor: pointer;
   margin: 2px;
-/*   padding: 0px; */
 }
 #numpad {
-/* 	max-width: 250px;
-min-width: 250px;
-margin:0px;
-padding:0px; */
 	width: 250px;
-/* 	position:absolute;
-left:0;
-top:20; */
 }
 #display {
-/*	max-width: 225px;
-	min-width: 225px;
-	max-height: 50px;
-	min-height: 50px;*/
 	width: 225px;
 	height: 50px;
-	/*margin-left: 12px;*/
 	border: 1px solid #666;
 	border-radius: 3px;
 	margin-bottom: 8px;
-/*	padding-top: 0px;
-	vertical-align: center;*/
 	text-align: right;
 	font-size: 40px;
 	display: inline-block;
@@ -65,9 +40,6 @@ top:20; */
 #displayContainer {
 	width: 270px;
 	height: 55px;
-	/*position:absolute;
-	left:0;
-	top:10;*/
-	 display: inline-block; 
+	display: inline-block; 
 	margin-bottom: 10px;
 }

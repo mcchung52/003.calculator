@@ -3,16 +3,17 @@
 var opnd1="0", opnd2="", op=""; //always start with a default, 0
 
 //we move thru states depending on the input
-var state = 1; 						// state1 = start (default)
-//var state2 = false; 		// state2 = 1st operand
-//var state3 = false; 		// state3 = 1st operand + op
-//var state4							// state4 = 1st operand + op + 2nd operand
+// state: 1 = start (default)
+// state: 2 = 1st operand
+// state: 3 = 1st operand + op
+// state: 4 = 1st operand + op + 2nd operand
+var state = 1;
 
 $(function calculator() {
 
   var documentReady = () => { 
   	
-  	$('.op').click(function(e) { 
+  	$('.op').on('click',function(e) { 
   		var disp = evaluate(e.target.id,'op');
   		$('#display').text(disp);
   		$('#sideDisplay').text(op==''?'':$('#'+op).text());
@@ -65,7 +66,11 @@ function evaluate(token,opORopnd) {
 					case 'equal':
 						op = '';
 						disp = opnd1;
-						break;					
+						break;	
+					case 'percent':
+						opnd1 = (Number(opnd1) / 100).toString();
+						disp = opnd1;
+						break;		
 				}
 			}
 			break;
@@ -78,7 +83,19 @@ function evaluate(token,opORopnd) {
 					disp = opnd1;
 				}
 				else {
-					opnd1 += token;
+					if (token=='0'&&opnd1.indexOf(".")==-1) {
+						if (Number(opnd1)!=0) {
+							opnd1 += token;
+						}
+					}
+					else if (opnd1=='0'&&token!='0') {
+						opnd1 = token;
+					}
+					else {
+						if (opnd1.length<9) {
+							opnd1 += token;							
+						}
+					}
 					disp = opnd1;
 				}
 			}
@@ -180,7 +197,19 @@ function evaluate(token,opORopnd) {
 					disp = opnd2;
 				}
 				else {
-					opnd2 += token;
+					if (token=='0'&&opnd2.indexOf(".")==-1) {
+						if (Number(opnd2)!=0) {
+							opnd2 += token;
+						}
+					}
+					else if (opnd2=='0'&&token!='0') {
+						opnd2 = token;
+					}
+					else {
+						if (opnd2.length<9) {
+							opnd2 += token;							
+						}
+					}
 					disp = opnd2;
 				}
 			}
@@ -218,7 +247,7 @@ function evaluate(token,opORopnd) {
 						}
 						opnd2 = '';
 						op = '';
-						state = 2;
+						state = 1;
 						disp = opnd1;
 						break;
 					case 'plus':
